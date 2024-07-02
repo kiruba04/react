@@ -3,7 +3,7 @@ import { Container, Row, Col, Form, Button, Nav } from 'react-bootstrap';
 import axios from 'axios';
 import "../profile/Profile.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserDoctor, faClock, faCalendarDays, faCalendarDay,faUser,faTicket,faDroplet,faVenusMars,faNotesMedical } from '@fortawesome/free-solid-svg-icons';
+import {faClock, faCalendarDays, faCalendarDay,faUser,faTicket,faDroplet,faVenusMars,faNotesMedical } from '@fortawesome/free-solid-svg-icons';
 
 const DoctorInformation = () => {
   const [view, setView] = useState('profile');
@@ -15,7 +15,6 @@ const DoctorInformation = () => {
     category: '',
     availableAppointments: []
   });
-  const [error, setError] = useState('');
   const [todayappointments, setTodayappointments] = useState([]);
 
   useEffect(() => {

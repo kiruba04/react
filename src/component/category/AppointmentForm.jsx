@@ -8,7 +8,6 @@ import Alert from 'react-bootstrap/Alert';
 function AppointmentForm({ doctorId, onHide }) {
   const [date, setDate] = useState('');
   const [time, setTime] = useState('');
-  const [doctorInfo, setDoctorInfo] = useState([]);
   const [availableDays, setAvailableDays] = useState([]);
   const [selectedDayInfo, setSelectedDayInfo] = useState(null);
   const [tokenNumber, setTokenNumber] = useState(null);
@@ -19,7 +18,7 @@ function AppointmentForm({ doctorId, onHide }) {
   useEffect(() => {
     axios.get(`https://hospital-gijl.onrender.com/api/doctor/info/${doctorId}`)
       .then(response => {
-        setDoctorInfo(response.data);
+  
         generateAvailableDays(response.data.availableAppointments);
       })
       .catch(error => console.error(error));
