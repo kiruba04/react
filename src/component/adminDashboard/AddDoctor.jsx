@@ -66,7 +66,7 @@ function AddDoctor(props) {
     };
 
     try {
-      const response = await axios.post('http://localhost:8800/api/doctor/add-doctor', newUser, {
+      const response = await axios.post('https://hospital-gijl.onrender.com/api/doctor/add-doctor', newUser, {
         withCredentials: true
       });
       console.log(response.data);
